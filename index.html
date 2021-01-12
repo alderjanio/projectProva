@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  
+    <title>Lorem Ipisum inc.</title>
+    <link rel="stylesheet" href="lib/jquery-ui.css">
+    <link rel="stylesheet" href="lib/bootstrap.min.css" />
+	<script src="lib/jquery.min.js"></script>  
+	<script src="lib/jquery-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <br />
+        
+        <h3 align="center">Cadastro de projetos </a></h3><br />
+        <br />
+        <div align="right" style="margin-bottom:5px;">
+        <button type="button" name="add" id="add" class="btn btn-success btn-xl">Add</button>
+        </div>
+        <div class="table-responsive" id="user_data">
+            
+        </div>
+        <br />
+    </div>
+    <div id="projectDialog" title="Cadastro">
+        <form method="post" id="formProject">
+            <div class="mb-3">
+                <label for="nameProject" class="form-label">Nome do Projeto </label>
+                <input type="text" class="form-control" id="nameProject">
+            </div>
+            <div class="row">
+            <div class="mb-3 col-sm-6">
+                <label for="dataInicio" class="form-label">Data de Início </label>
+                <input type="date" class="form-control" id="dataInicio">
+            </div>
+            
+            <div class="mb-3 col-sm-6">
+                <label for="DataTermino" class="form-label">Data de Término </label>
+                <input type="date" class="form-control" id="DataTermino">
+            </div>
+            </div>
+            <div class="row">
+            <div class="mb-3 col-sm-6">
+                <label for="valorProject" class="form-label">Valor do Projeto </label>
+                <input type="text" class="form-control" id="valorProject">
+            </div>
+             
+            <div class="mb-3 col-sm-6">
+                <label for="nameRisco" class="form-label">Risco </label>
+                <input type="text" class="form-control" id="nameRisco">
+            </div>
+        </div>
+            <div class="mb-3">
+                <label for="nameParticipantes" class="form-label">Participantes </label>
+                <input type="text" class="form-control" id="nameParticipantes" placeholder="Informe os participantes separados por ," >
+            </div>
+            <button  type="submit" class="btn btn-primary" id="btnEnviar">Adicionar</button>
+        </form>
+    </div>
+
+    <script>
+    
+    $(document).ready(function(){  
+
+        $("#projectDialog").dialog({
+		autoOpen:false,
+		width:400
+	    });
+
+        $('#add').click(function(){
+           
+            //$('#user_dialog').attr('title', 'Add Data');
+            //$('#action').val('insert');
+           // $('#btnEnviar').val('Insert');
+            $('#formProject')[0].reset();
+            $('#btnEnviar').attr('disabled', false);
+            $("#projectDialog").dialog('open');
+	    });
+
+    })
+
+    </script>
+</body>
+</html>
